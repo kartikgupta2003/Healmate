@@ -14,11 +14,11 @@ const PrescriptionForm = ()=>{
         durationInDays : 0 ,
     })
 
-    const [name , setName] = useState("");
+    const [medName , setMedName] = useState("");
     const [frequency , setFrequency] = useState("");
     const [amount , setAmount] = useState("");
 
-    const handleName = (e)=> setName(e.target.value)
+    const handleName = (e)=> setMedName(e.target.value)
     const handleFrequency = (e)=> setFrequency(e.target.value)
     const handleAmount = (e)=> setAmount(e.target.value)
 
@@ -27,7 +27,7 @@ const PrescriptionForm = ()=>{
         const value = e.target.value ;
 
         if(name === "medicines"){
-            const med = {name : name , frequencyPerDay : frequency , dosageAmount : amount};
+            const med = {name : medName , frequencyPerDay : frequency , dosageAmount : amount};
             // if(state.medicines.size === 0){
             //     setState({...state , medicines : [med]})
             // }
@@ -39,7 +39,7 @@ const PrescriptionForm = ()=>{
                     }
                 })
             // }b
-            setName("");
+            setMedName("");
             setFrequency("");
             setAmount("");
             return ;
