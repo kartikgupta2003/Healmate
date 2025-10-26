@@ -123,7 +123,7 @@ const PrescriptionForm = ()=>{
         type="text"
         name="name"
         placeholder="Medicine name"
-        value={name}
+        value={medName}
       />
       <input
         onChange={handleFrequency}
