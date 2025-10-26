@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const connectDB = async()=>{
     try{
-        await mongoose.connect("mongodb://127.0.0.1:27017/HealDB");
+        const url = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/HealDB";
+        await mongoose.connect(url);
         console.log("MongoDB connected");
     }
     catch(err){
