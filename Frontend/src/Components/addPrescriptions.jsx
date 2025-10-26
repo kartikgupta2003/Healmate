@@ -63,7 +63,7 @@ const PrescriptionForm = ()=>{
         }
 
         try{
-            const {data}= await axios.post("http://localhost:8000/api/prescriptions/add" , body , config);
+            const {data}= await axios.post("https://healmate-d6a2.onrender.com/api/prescriptions/add" , body , config);
 
             localStorage.setItem("userInfo", JSON.stringify(data));
             setUser(data);

@@ -45,7 +45,7 @@ const PersonalInfo = () => {
         }
 
         try{
-            const {data} = await axios.patch("http://localhost:8000/api/user/update" , body , config);
+            const {data} = await axios.patch("https://healmate-d6a2.onrender.com/api/user/update" , body , config);
             localStorage.setItem("userInfo", JSON.stringify(data));
         }catch(err){
             window.scrollTo({ top: 0, behavior: "smooth" });

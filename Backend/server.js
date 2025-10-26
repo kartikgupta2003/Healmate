@@ -19,7 +19,7 @@ const app = express();
 // const __dirname = path.resolve();
 
 app.use(cors({
-  origin: "http://localhost:5173",  // ✅ your frontend origin
+  origin: "https://healmate-d6a2.onrender.com",  // ✅ your frontend origin
   credentials: true,                // ✅ allow credentials (cookies)
 }));
 app.use(express.json());

@@ -15,7 +15,7 @@ const Symptomspage = () => {
         if (permission === 'granted') {
             // generate token 
             const token = await getToken(messaging, { vapidKey: "BB8mlDm4I4NUdv67cEM4F7PZU0fUy1lg8-OxLP8MK8QDQF0Bk2wzm_GA4yCbaZ-lm-NKmR2TasMQh_Isr23NJPA" })
-            await axios.post("http://localhost:8000/api/user/addToken", { userToken: token }, {
+            await axios.post("https://healmate-d6a2.onrender.com/api/user/addToken", { userToken: token }, {
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -56,7 +56,7 @@ const Symptomspage = () => {
         }
 
         try {
-            const { data } = await axios.post("http://localhost:8000/api/symptoms/check", body, config);
+            const { data } = await axios.post("https://healmate-d6a2.onrender.com/api/symptoms/check", body, config);
 
             console.log(data);
             setSearching(false);

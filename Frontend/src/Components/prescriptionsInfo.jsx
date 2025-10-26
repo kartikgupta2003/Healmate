@@ -38,7 +38,7 @@ const PrescriptionsInfo = () => {
         }
 
         try{
-            const {data} = await axios.post("http://localhost:8000/api/prescriptions/delete" , body , config);
+            const {data} = await axios.post("https://healmate-d6a2.onrender.com/api/prescriptions/delete" , body , config);
             localStorage.setItem("userInfo", JSON.stringify(data));
             console.log("user after updates" , data);
             setUser(data);
@@ -50,7 +50,7 @@ const PrescriptionsInfo = () => {
     }
 
     const handleLogout = async()=>{
-        const {data} = await axios.get("http://localhost:8000/api/user/logout" , { withCredentials: true });
+        const {data} = await axios.get("https://healmate-d6a2.onrender.com/api/user/logout" , { withCredentials: true });
         setUser(null);
         localStorage.removeItem("userInfo" , "");
         navigate("/");

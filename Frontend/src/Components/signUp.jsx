@@ -42,7 +42,7 @@ const SignUp = (props)=>{
         }
 
         try{
-            const {data} = await axios.post("http://localhost:8000/api/user/register" , body , config);
+            const {data} = await axios.post("https://healmate-d6a2.onrender.com/api/user/register" , body , config);
             console.log(data);
             window.scrollTo({ top: 0, behavior: "smooth" });
             toast.success("User registered successfully !");

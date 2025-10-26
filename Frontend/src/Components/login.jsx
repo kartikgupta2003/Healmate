@@ -34,7 +34,7 @@ const Login = ()=>{
         }
 
         try{
-            const {data}= await axios.post("http://localhost:8000/api/user/login" , body , config);
+            const {data}= await axios.post("https://healmate-d6a2.onrender.com/api/user/login" , body , config);
             console.log(data);
             localStorage.setItem("userInfo", JSON.stringify(data));
             // navigate to symptoms page 
