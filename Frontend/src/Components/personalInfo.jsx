@@ -96,7 +96,7 @@ const PersonalInfo = () => {
     return (
         <>
             {(isEditable) ? (<>
-                <div className="container mb-2">
+                <div className="container-md mb-2">
                     <div className="card" style={{ background: "rgba(255, 255, 255, 0.2)" }}>
                         <h3 className="card-header" style={{ color: "#2c2c2c" }}>General Info</h3>
                         <div className="card-body">
@@ -106,9 +106,9 @@ const PersonalInfo = () => {
                             </div>
                             <div className="d-flex" style={{ justifyContent: "space-between" }}>
                                 <label className="fw-semibold mb-2" style={{ color: "#2c2c2c" }}>Gender :- <input onChange={inputHandler} type="text" value={user.gender} name="gender"></input></label>
+                                <label className="fw-semibold me-2 mb-2" style={{ color: "#2c2c2c" }}>Weight in Kg :- <input onChange={inputHandler} type="number" value={user.weight} name="weight"></input></label>
                             </div>
                             <div className="d-flex" style={{ justifyContent: "space-between" }}>
-                                <label className="fw-semibold me-2 mb-2" style={{ color: "#2c2c2c" }}>Weight in Kg :- <input onChange={inputHandler} type="number" value={user.weight} name="weight"></input></label>
                                 <label className="fw-semibold me-2 mb-2" style={{ color: "#2c2c2c" }}>Medical History :- <input onChange={inputHandler} type="text" value={user.medicalHistory} name="medicalHistory"></input></label>
                             </div>
                             <button onClick={submitHandler} className="btn btn-danger" type="button">Save</button>
