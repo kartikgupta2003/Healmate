@@ -8,7 +8,7 @@ const Dashboard = ()=>{
     const {user , setUser} = useUser();
     //("user on dashboard" , user);
     return (
-        <div className="container-fluid pt-4" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between", textAlign: "center", minWidth: "100%vw", minHeight: "100vh" }}>
+        <div className="container-fluid pt-4" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between", textAlign: "center", minWidth: "100vw", minHeight: "100vh" }}>
             <Nav />
             <div>
                 <h1 style={{ color: "#2E2E2E" }}>Heal Mate</h1>
