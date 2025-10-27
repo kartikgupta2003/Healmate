@@ -88,13 +88,13 @@ const updateUser = asyncHandler(async(req,res)=>{
     }
 
     if(updateField === "weight" || updateField === "age"){
-        if(updateField === "weight" && value <= 0){
+        if(updateField === "weight" && newValue <= 0){
             let err = new Error("Weight cannot be negative or zero!");
             err.status = 400 ;
             throw err; 
         }
 
-        if(updateField === "age" && value <= 0){
+        if(updateField === "age" && newValue <= 0){
             let err = new Error("Age cannot be negative or zero!");
             err.status = 400 ;
             throw err; 
@@ -104,6 +104,8 @@ const updateUser = asyncHandler(async(req,res)=>{
     const user = req.user ;
 
     const updatedUser = await User.findOneAndUpdate({_id : user._id} , { $set : {[updateField] : newValue}} , {new : true}).populate("prescriptions");
+
+    // console.log("user updated to " , user);
 
     //("user got updated " , updatedUser);
 

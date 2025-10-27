@@ -34,7 +34,10 @@ export const Provider = (props)=>{
             //("chala na ")
             navigate("/");
         }
-        setUser(userInfo);
+        else{
+            setUser(userInfo);
+            navigate("/symptoms");
+        }
         //("chal ja mere bhai");
     } , [location.pathname , navigate, setUser ])
 
