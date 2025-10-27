@@ -96,7 +96,7 @@ const PersonalInfo = () => {
     return (
         <>
             {(isEditable) ? (<>
-                <div className="container-md mb-2">
+                <div className="container mb-2" style={{width:"100%"}}>
                     <div className="card" style={{ background: "rgba(255, 255, 255, 0.2)" }}>
                         <h3 className="card-header" style={{ color: "#2c2c2c" }}>General Info</h3>
                         <div className="card-body">
