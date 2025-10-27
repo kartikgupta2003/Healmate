@@ -20,17 +20,6 @@ const PersonalInfo = () => {
         let name= e.target.name 
         let value = e.target.value 
 
-        if(name === "age" && value<=0){
-            console.log("chal rha !")
-            window.scrollTo({ top: 0, behavior: "smooth" });
-            return toast.error("Age cannote be negative or zero!");
-        }
-
-        if(name === "weight" && value<=0){
-            window.scrollTo({ top: 0, behavior: "smooth" });
-            return toast.error("Weight cannot be negative or zero!");
-        }
-
         setChanged((obj)=>{
             return {...obj , [name] : true}
         })
@@ -71,10 +60,18 @@ const PersonalInfo = () => {
         }
 
         if(changed.age){
+            if(user.age <= 0){
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                return toast.error("Age cannot be negative or zero !");
+            }
             updateDB("age" , user.age)
         }
 
         if(changed.weight){
+            if(user.weight <= 0){
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                return toast.error("Weight cannot be negative or zero !");
+            }
             updateDB("weight" , user.weight)
         }
 
