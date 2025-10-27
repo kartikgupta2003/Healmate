@@ -103,11 +103,12 @@ const PersonalInfo = () => {
                             <div className="d-flex" style={{ justifyContent: "space-between" }}>
                                 <label className="fw-semibold mb-2" style={{ color: "#2c2c2c" }}>Name :- <input onChange={inputHandler} type="text" value={user.name} name="name"></input></label>
                                 <label className="fw-semibold mb-2" style={{ color: "#2c2c2c" }}>Age :- <input onChange={inputHandler} type="number" value={user.age} name="age"></input></label>
-                            <div className="d-flex" style={{ justifyContent: "space-between" }}>
-                                <label className="fw-semibold mb-2" style={{ color: "#2c2c2c" }}>Gender :- <input onChange={inputHandler} type="text" value={user.gender} name="gender"></input></label>
-                                <label className="fw-semibold me-2 mb-2" style={{ color: "#2c2c2c" }}>Weight in Kg :- <input onChange={inputHandler} type="number" value={user.weight} name="weight"></input></label>
                             </div>
                             <div className="d-flex" style={{ justifyContent: "space-between" }}>
+                                <label className="fw-semibold mb-2" style={{ color: "#2c2c2c" }}>Gender :- <input onChange={inputHandler} type="text" value={user.gender} name="gender"></input></label>
+                            </div>
+                            <div className="d-flex" style={{ justifyContent: "space-between" }}>
+                                <label className="fw-semibold me-2 mb-2" style={{ color: "#2c2c2c" }}>Weight in Kg :- <input onChange={inputHandler} type="number" value={user.weight} name="weight"></input></label>
                                 <label className="fw-semibold me-2 mb-2" style={{ color: "#2c2c2c" }}>Medical History :- <input onChange={inputHandler} type="text" value={user.medicalHistory} name="medicalHistory"></input></label>
                             </div>
                             <button onClick={submitHandler} className="btn btn-danger" type="button">Save</button>
