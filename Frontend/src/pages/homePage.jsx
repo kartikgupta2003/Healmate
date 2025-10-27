@@ -7,6 +7,8 @@ import {useNavigate} from "react-router-dom";
 const Homepage = () => {
     const [isVisible , setIsVisible] = useState(0);
     const {user} = useUser();
+    const navigate = useNavigate();
+    
 
     useEffect(()=>{
         if(user){
