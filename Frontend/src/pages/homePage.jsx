@@ -1,9 +1,18 @@
-import React , {useState} from 'react';
+import React , {useState , useEffect} from 'react';
 import Login from "../Components/login.jsx";
 import SignUp from '../Components/signUp.jsx';
+import {useUser} from "../Context/useUser.js";
+import {useNavigate} from "react-router-dom";
 
 const Homepage = () => {
     const [isVisible , setIsVisible] = useState(0);
+    const {user} = useUser();
+
+    useEffect(()=>{
+        if(user){
+            navigate("/symptoms");
+        }
+    } , [])
 
     return (
         <div className= "container pt-4" style={{display : "flex" , flexDirection : "column" , alignItems : "center" , justifyContent : "center" , textAlign: "center"}}>
