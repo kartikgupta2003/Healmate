@@ -6,11 +6,12 @@ html, body, #root {
   min-width : 100vw;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .App{
     min-height: 100vh;
-    min-width:100%;
+    width: 100vw;  
     background-image: url("/images/banner.png");
     background-size: cover;
     background-position: center;
