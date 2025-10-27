@@ -11,7 +11,7 @@ export const Provider = (props)=>{
     const location = useLocation();
 
     useEffect(()=>{
-        console.log("chal ja mere bhai");
+        //("chal ja mere bhai");
         const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 //         Even though you’ve defined the field in your Mongoose schema as:
 
@@ -31,11 +31,11 @@ export const Provider = (props)=>{
 
 // "2025-10-23T00:00:00.000Z"
         if(!userInfo){
-            console.log("chala na ")
+            //("chala na ")
             navigate("/");
         }
         setUser(userInfo);
-        console.log("chal ja mere bhai");
+        //("chal ja mere bhai");
     } , [location.pathname , navigate, setUser ])
 
     return (

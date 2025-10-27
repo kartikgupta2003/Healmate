@@ -34,6 +34,20 @@ const SignUp = (props)=>{
             medicalHistory : state.medicalHistory,
         }
 
+        const age = Number(state.age);
+        const weight = Number(state.weight);
+
+
+        if(age<=0){
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            return toast.error("Age cannot be negative or zero!");
+        }
+
+        if(weight<=0){
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            return toast.error("Weight cannot be negative or zero!");
+        }
+
         const config = {
             headers : {
                 "Content-type" : "application/json" ,
@@ -43,12 +57,12 @@ const SignUp = (props)=>{
 
         try{
             const {data} = await axios.post("https://healmate-d6a2.onrender.com/api/user/register" , body , config);
-            console.log(data);
+            //(data);
             window.scrollTo({ top: 0, behavior: "smooth" });
             toast.success("User registered successfully !");
             props.func(1);
         }catch(err){
-            console.log(err);
+            //(err);
             window.scrollTo({ top: 0, behavior: "smooth" });
             return toast.error(err.response.data.message);
         }

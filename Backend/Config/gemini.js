@@ -6,7 +6,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 // async function listModels() {
 //   try {
 //     const res = await genAI.models.list();
-//     console.log(res.data); // prints all available models
+//     //(res.data); // prints all available models
 //   } catch (error) {
 //     console.error("Error listing models:", error);
 //   }

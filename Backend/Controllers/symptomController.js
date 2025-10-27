@@ -72,7 +72,7 @@ const symptomChecker = asyncHandler(async (req, res  , next) => {
         return res.json({ diagnosis });
     }
     catch(error){
-        console.log("Gemini API error:" , error);
+        //("Gemini API error:" , error);
         const err = new Error("AI service failed");
         next(err);
     }

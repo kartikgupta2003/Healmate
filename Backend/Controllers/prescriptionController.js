@@ -28,7 +28,7 @@ const prescriptionAdder = asyncHandler(async(req,res)=>{
 
   const user = await User.findByIdAndUpdate(userId , {$push : {prescriptions : prescription._id}} , {new : true}).populate("prescriptions");
 
-  console.log(user);
+  //(user);
 
   res.status(200).json(user);
 })

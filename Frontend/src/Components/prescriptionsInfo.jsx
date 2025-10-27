@@ -25,7 +25,7 @@ const PrescriptionsInfo = () => {
 
     const handleDelete = async(preId)=>{
 
-        console.log("chal raha ");
+        //("chal raha ");
         const body = {
             preId
         }
@@ -40,7 +40,7 @@ const PrescriptionsInfo = () => {
         try{
             const {data} = await axios.post("https://healmate-d6a2.onrender.com/api/prescriptions/delete" , body , config);
             localStorage.setItem("userInfo", JSON.stringify(data));
-            console.log("user after updates" , data);
+            //("user after updates" , data);
             setUser(data);
         }catch(err){
             window.scrollTo({ top: 0, behavior: "smooth" });

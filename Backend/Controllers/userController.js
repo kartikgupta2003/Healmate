@@ -13,6 +13,20 @@ const registerUser = async(req,res,next)=>{
             throw err;
         }
 
+        if(age <= 0 || weight <= 0){
+            if(age<=0){
+                const err= new Error("Age cannot be negative or zero!");
+                err.status = 400;
+                throw err;
+            }
+
+            if(weight <= 0){
+                const err= new Error("Weight cannot be negative or zero!");
+                err.status = 400;
+                throw err;
+            }
+        }
+
         const existingUser = await User.findOne({email : email});
         if(medicalHistory.length === 0) medicalHistory="No medical history available.";
         if(existingUser){
@@ -30,7 +44,7 @@ const registerUser = async(req,res,next)=>{
             weight ,
             medicalHistory
         });
-        console.log(user);
+        //(user);
 
         return res.status(200).send({"message" : "User resgistered successfully !"})
     }catch(err){
@@ -73,11 +87,25 @@ const updateUser = asyncHandler(async(req,res)=>{
         throw err; 
     }
 
+    if(updateField === "weight" || updateField === "age"){
+        if(updateField === "weight" && value <= 0){
+            let err = new Error("Weight cannot be negative or zero!");
+            err.status = 400 ;
+            throw err; 
+        }
+
+        if(updateField === "age" && value <= 0){
+            let err = new Error("Age cannot be negative or zero!");
+            err.status = 400 ;
+            throw err; 
+        }
+    }
+
     const user = req.user ;
 
     const updatedUser = await User.findOneAndUpdate({_id : user._id} , { $set : {[updateField] : newValue}} , {new : true}).populate("prescriptions");
 
-    console.log("user got updated " , updatedUser);
+    //("user got updated " , updatedUser);
 
     res.json(updatedUser);
 })
@@ -87,7 +115,7 @@ const addUserToken = asyncHandler(async(req,res)=>{
     const {userToken} = req.body ;
     const id= req.user._id;
     const user = await User.findByIdAndUpdate(id , {$set : {token : userToken}} , {new : true}).populate("prescriptions");
-    console.log("user token add ho gya " , user);
+    //("user token add ho gya " , user);
     res.json(user);
 })
 

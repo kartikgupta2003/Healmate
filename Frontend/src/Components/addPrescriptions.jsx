@@ -69,7 +69,7 @@ const PrescriptionForm = ()=>{
             setUser(data);
 
 
-            // console.log("ur prescription " , data);
+            // //("ur prescription " , data);
             setState({
                 diagnosisName : "" ,
                 medicines : [] ,

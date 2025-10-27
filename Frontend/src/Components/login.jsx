@@ -35,12 +35,12 @@ const Login = ()=>{
 
         try{
             const {data}= await axios.post("https://healmate-d6a2.onrender.com/api/user/login" , body , config);
-            console.log(data);
+            //(data);
             localStorage.setItem("userInfo", JSON.stringify(data));
             // navigate to symptoms page 
             navigate("/symptoms")
         }catch(err){
-            // console.log(err.response.data.message);
+            // //(err.response.data.message);
             window.scrollTo({ top: 0, behavior: "smooth" });
             return toast.error(err.response.data.message);
         }

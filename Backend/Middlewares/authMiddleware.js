@@ -5,10 +5,10 @@ const Prescription = require("../Models/prescriptionsModel");
 const SymptomCheck = require("../Models/symptomsModel");
 
 const protect = asyncHandler(async(req , res , next)=>{
-    console.log("entered");
+    //("entered");
     const token = req.cookies?.uid;
 
-    console.log("token is " , token)
+    //("token is " , token)
 
     if(!token){
         const err = new Error("Not authorized !");
@@ -17,13 +17,13 @@ const protect = asyncHandler(async(req , res , next)=>{
     }
 
     const decoded = jwt.verify(token , process.env.JWT_SECRET);
-    console.log(decoded);
+    //(decoded);
 
     const user = await User.findById(decoded.id).select("-password")
                                                 .populate("symptomChecks")
                                                 .populate("prescriptions");
 
-    console.log(user);
+    //(user);
 
     if(user){
         req.user = user ;

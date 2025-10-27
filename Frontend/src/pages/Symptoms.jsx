@@ -21,7 +21,7 @@ const Symptomspage = () => {
                 },
                 withCredentials: true
             });
-            console.log("token generated ", token);
+            //("token generated ", token);
             // now we need to send this token to DB
         }
         else if (permission === 'denied') {
@@ -58,7 +58,7 @@ const Symptomspage = () => {
         try {
             const { data } = await axios.post("https://healmate-d6a2.onrender.com/api/symptoms/check", body, config);
 
-            console.log(data);
+            //(data);
             setSearching(false);
             setSymptom("");
 

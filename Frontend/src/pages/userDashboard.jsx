@@ -6,7 +6,7 @@ import PrescriptionsInfo from "../Components/prescriptionsInfo";
 
 const Dashboard = ()=>{
     const {user , setUser} = useUser();
-    console.log("user on dashboard" , user);
+    //("user on dashboard" , user);
     return (
         <div className="container-fluid pt-4" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between", textAlign: "center", width: "100%", minHeight: "100vh" }}>
             <Nav />

@@ -10,7 +10,7 @@ class NotificationService{
         }catch(err){
             throw err ;
         }
-        // console.log("token bkl " , deviceToken);
+        // //("token bkl " , deviceToken);
         const message = {
             notification : {
                 title ,

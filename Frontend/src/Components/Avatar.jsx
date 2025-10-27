@@ -6,7 +6,7 @@ const AvatarComp = () => {
     const { user } = useUser();
 
 
-    console.log("user hai ", user);
+    //("user hai ", user);
 
     let arr = user?.name.split(" ");
     let name="";
