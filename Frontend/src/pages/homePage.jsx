@@ -14,7 +14,7 @@ const Homepage = () => {
         if(user){
             navigate("/symptoms");
         }
-    } , [])
+    } , [user , navigate])
 
     return (
         <div className= "container pt-4" style={{display : "flex" , flexDirection : "column" , alignItems : "center" , justifyContent : "center" , textAlign: "center"}}>
